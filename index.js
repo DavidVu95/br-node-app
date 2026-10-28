@@ -1,3 +1,4 @@
+import Zen from "@aikidosec/firewall";
 import { pathToFileURL } from "node:url";
 import Koa from "koa/lib/application.js";
 
@@ -191,6 +192,9 @@ const libraries = [
 ];
 
 const app = new Koa();
+
+// Call this after auth middleware, as early as possible in the middleware stack
+Zen.addKoaMiddleware(app);
 
 app.use(async (ctx) => {
   if (ctx.path !== "/") {

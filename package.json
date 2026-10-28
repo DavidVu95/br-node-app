@@ -6,13 +6,14 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node -r @aikidosec/firewall/instrument index.js"
   },
   "engines": {
     "node": ">=20"
   },
   "license": "ISC",
   "dependencies": {
+    "@aikidosec/firewall": "1.8.46",
     "@apollo/server": "5.0.0-aikido.6",
     "@babel/helpers": "7.26.7-aikido.1",
     "@babel/plugin-transform-modules-systemjs": "7.28.5-aikido.2",
